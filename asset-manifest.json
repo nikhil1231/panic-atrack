@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/panic-atrack/static/css/main.6f1b41ce.css",
+    "main.js": "/panic-atrack/static/js/main.3b5519e3.js",
+    "index.html": "/panic-atrack/index.html",
+    "main.6f1b41ce.css.map": "/panic-atrack/static/css/main.6f1b41ce.css.map",
+    "main.3b5519e3.js.map": "/panic-atrack/static/js/main.3b5519e3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6f1b41ce.css",
+    "static/js/main.3b5519e3.js"
+  ]
+}
