@@ -12,13 +12,7 @@ import {
   ToggleButton,
 } from "react-bootstrap";
 import RangeSlider from "react-bootstrap-range-slider";
-import * as Realm from "realm-web";
-
-const APP_ID = process.env.REACT_APP_MONGO_REALM_APP_ID;
-const DATA_SOURCE_NAME = "mongodb-atlas";
-const DATABASE_NAME = "main";
-const COLLECTION_NAME = "episodes";
-const app = new Realm.App({ id: APP_ID });
+import { insertEpisode } from "../util";
 
 const TRIGGERS = [
   "None",
@@ -33,7 +27,9 @@ const LENGTHS = ["< 3 secs", "3-7 secs", "> 7 secs"];
 const LogEpisode = (props) => {
   const [severity, setSeverity] = useState(1);
   const [timeToggle, setTimeToggle] = useState("Now");
-  const [time, setTime] = useState(new Date().toISOString().slice(0, 16));
+  const [timeInput, setTimeInput] = useState(
+    new Date().toISOString().slice(0, 16)
+  );
   const [trigger, setTrigger] = useState(TRIGGERS[0]);
   const [length, setLength] = useState(LENGTHS[0]);
   const [notes, setNotes] = useState("");
@@ -43,21 +39,14 @@ const LogEpisode = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Authenticate with Realm (using anonymous authentication for this example)
-    const user = await app.logIn(Realm.Credentials.anonymous());
-
-    // Connect to MongoDB
-    const mongo = app.currentUser.mongoClient(DATA_SOURCE_NAME);
-    const collection = mongo.db(DATABASE_NAME).collection(COLLECTION_NAME);
-
-    let finalTime =
+    let time =
       timeToggle === "Now"
         ? new Date().toISOString()
-        : new Date(time + ":00Z").toISOString();
+        : new Date(timeInput + ":00Z").toISOString();
 
     // Insert the episode data
     try {
-      await collection.insertOne({ severity, finalTime, notes, trigger });
+      await insertEpisode({ severity, time, length, notes, trigger });
       handleShow("Successfully logged episode!");
 
       setNotes("");
@@ -120,8 +109,8 @@ const LogEpisode = (props) => {
                 <Form.Label>Select Past Time</Form.Label>
                 <Form.Control
                   type="datetime-local"
-                  value={time}
-                  onChange={(e) => setTime(e.target.value)}
+                  value={timeInput}
+                  onChange={(e) => setTimeInput(e.target.value)}
                 />
               </Form.Group>
             )}

@@ -1,0 +1,20 @@
+tr .severity-1 {
+  background-color: #a3ff72; /* Green */
+}
+
+tr .severity-2 {
+  background-color: #d9ff5b; /* Light Green */
+}
+
+tr .severity-3 {
+  background-color: #ffec70; /* Yellow */
+}
+
+tr .severity-4 {
+  background-color: #ffcb7e; /* Orange */
+}
+
+tr .severity-5 {
+  background-color: #ff8a81; /* Red */
+  color: white;
+}
