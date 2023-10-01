@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/panic-a-track/static/css/main.6f1b41ce.css",
-    "main.js": "/panic-a-track/static/js/main.3b5519e3.js",
+    "main.css": "/panic-a-track/static/css/main.d3489283.css",
+    "main.js": "/panic-a-track/static/js/main.1503d62f.js",
     "index.html": "/panic-a-track/index.html",
-    "main.6f1b41ce.css.map": "/panic-a-track/static/css/main.6f1b41ce.css.map",
-    "main.3b5519e3.js.map": "/panic-a-track/static/js/main.3b5519e3.js.map"
+    "main.d3489283.css.map": "/panic-a-track/static/css/main.d3489283.css.map",
+    "main.1503d62f.js.map": "/panic-a-track/static/js/main.1503d62f.js.map"
   },
   "entrypoints": [
-    "static/css/main.6f1b41ce.css",
-    "static/js/main.3b5519e3.js"
+    "static/css/main.d3489283.css",
+    "static/js/main.1503d62f.js"
   ]
 }
