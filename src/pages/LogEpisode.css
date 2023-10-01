@@ -1,0 +1,21 @@
+.container {
+  overflow-x: hidden;
+}
+
+.form-input {
+  margin-bottom: 8px;
+}
+
+.submit-button {
+  width: 100%;
+}
+
+.horizontal-wrap-buttons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.btn-group label {
+  border-radius: 0;
+  margin-bottom: -1px;
+}

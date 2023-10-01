@@ -12,7 +12,7 @@ const Navibar = () => {
     <>
       <Navbar bg="light" expand="lg">
         <Navbar.Brand as={Link} to="/">
-          Panic-A-Track
+          Logger
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbar-nav" />
         <Navbar.Collapse id="navbar-nav">
