@@ -71,7 +71,7 @@ const LogEpisode = (props) => {
               <Form.Label>Severity: {severity}</Form.Label>
               <RangeSlider
                 value={severity}
-                onChange={(e) => setSeverity(e.target.value)}
+                onChange={(e) => setSeverity(parseInt(e.target.value))}
                 min={1}
                 max={5}
                 step={1}

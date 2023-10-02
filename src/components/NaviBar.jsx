@@ -6,6 +6,7 @@ import { Link, Route, Routes } from "react-router-dom";
 
 import LogEpisode from "../pages/LogEpisode";
 import ListEpisodes from "../pages/ListEpisodes";
+import ChartEpisodes from "../pages/ChartEpisodes";
 import NotFoundPage from "../pages/NotFoundPage";
 
 const Navibar = () => {
@@ -24,6 +25,9 @@ const Navibar = () => {
             <Nav.Link as={Link} to="/list">
               List
             </Nav.Link>
+            <Nav.Link as={Link} to="/chart">
+              Chart
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -31,6 +35,7 @@ const Navibar = () => {
       <Routes>
         <Route path="/" element={<LogEpisode />} />
         <Route path="/list" element={<ListEpisodes />} />
+        <Route path="/chart" element={<ChartEpisodes />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>

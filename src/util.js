@@ -17,7 +17,7 @@ export const getEpisodes = async () => {
 
   const eps = await collection.find();
 
-  eps.sort((a, b) => new Date(b.time) - new Date(a.time));
+  eps.sort((a, b) => new Date(a.time) - new Date(b.time));
 
   return eps;
 };

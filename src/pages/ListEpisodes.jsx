@@ -10,7 +10,7 @@ const ListEpisodes = (props) => {
   const [selectedEpisode, setSelectedEpisode] = useState(null);
 
   useEffect(() => {
-    getEpisodes().then((eps) => setEpisodes(eps));
+    getEpisodes().then((eps) => setEpisodes(eps.reverse()));
   }, []);
 
   const handleDelete = (episodeId) => {
