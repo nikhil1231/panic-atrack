@@ -21,6 +21,8 @@ const TRIGGERS = [
   "Looking around",
   "Exercise",
   "Anxiety",
+  "Caffeine/sugar",
+  "Other",
 ];
 const LENGTHS = ["< 3 secs", "3-7 secs", "> 7 secs"];
 
