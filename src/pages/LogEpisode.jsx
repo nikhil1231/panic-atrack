@@ -35,11 +35,14 @@ const LogEpisode = (props) => {
   const [trigger, setTrigger] = useState(TRIGGERS[0]);
   const [length, setLength] = useState(LENGTHS[0]);
   const [notes, setNotes] = useState("");
+  const [isLogging, setIsLogging] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    setIsLogging(true);
 
     let time =
       timeToggle === "Now"
@@ -55,6 +58,8 @@ const LogEpisode = (props) => {
     } catch (err) {
       console.error("Error logging episode:", err);
       handleShow("Error logging episode.");
+    } finally {
+      setIsLogging(false);
     }
   };
 
@@ -174,7 +179,12 @@ const LogEpisode = (props) => {
               />
             </Form.Group>
 
-            <Button variant="primary" type="submit" className="submit-button">
+            <Button
+              variant="primary"
+              type="submit"
+              className="submit-button"
+              disabled={isLogging}
+            >
               Log
             </Button>
           </Form>
